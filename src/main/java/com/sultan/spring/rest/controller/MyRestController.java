@@ -20,7 +20,7 @@ public class MyRestController {
     private EmployeeService employeeService;
 
 
-
+    // READ
     @GetMapping("/employees")
     public List<Employee> getAllEmployees() {
         List<Employee> allEmployees = employeeService.getAllEmployees();
@@ -38,6 +38,11 @@ public class MyRestController {
         return employee;
     }
 
+
+
+
+    //CREATE
+
     @PostMapping("/employees")
     public Employee addNewEmployee(@RequestBody Employee employee) {
         employeeService.saveEmployee(employee);
@@ -46,6 +51,11 @@ public class MyRestController {
 
 
 
+
+
+
+
+    //UPDATE
     @PutMapping("/employees")
     public Employee updateEmployee(@RequestBody Employee employee) {
         employeeService.saveEmployee(employee);
@@ -53,7 +63,7 @@ public class MyRestController {
     }
 
 
-
+    //DELETE
     @DeleteMapping("/employees/{id}")
     public String deleteEmployee(@PathVariable int id) {
         Employee employee = employeeService.getEmployeeById(id);

@@ -17,7 +17,7 @@ public class EmployeeDAOImpl implements EmployeeDAO{
     @Autowired
     private SessionFactory sessionFactory;
 
-
+    //READ
 
     @Override
     public List<Employee> getAllEmployees() {
@@ -34,6 +34,9 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 
     }
 
+
+
+    //CREATE
     @Override
     public void saveEmployee(Employee employee) {
         Session session = sessionFactory.getCurrentSession();
@@ -42,6 +45,7 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 
     }
 
+    //READ
     @Override
     public Employee getEmployee(int id) {
         Session session = sessionFactory.getCurrentSession();
